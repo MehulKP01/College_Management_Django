@@ -1,0 +1,581 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% comment %} <link rel="stylesheet" href="{% static "AC.css  " %}"> {% endcomment %}
+
+
+     <!-- Latest compiled and minified CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+     <link rel="stylesheet" href="AC.css">
+     <style>
+        .klo
+{
+    font-size: 30px;font-family: sans-serif;color:#112b4a;;
+}
+.container1{
+    /* max-width: 400px; */
+    background: #F8F9FD;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+    
+    border-radius: 40px;
+    padding: 25px 35px;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    margin: 20px;
+    margin-top:20px;
+    width:100%
+  }
+  
+  
+  
+  .heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    color:#112b4a;
+  }
+  
+  .form {
+    margin-top: 10px;
+  }
+  
+  .form .input {
+    width: 70%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+    height: 50px;
+    margin-top: -1px;
+    margin-left: -10px;
+    
+  }
+
+  .form .input1 {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+    
+  }
+  
+  .form .input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+
+  .w
+  {
+    width: 50%;
+  }
+  
+  .form .input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form .input:focus {
+    outline: none;
+    border-inline: 2px solid #12B1D1 ;
+    border-top: 2px solid #12B1D1;
+    border-bottom: 2px solid #12B1D1;
+    
+  }
+
+  .form .input1:focus {
+    outline: none;
+    border-inline: 2px solid #12B1D1 ;
+    border-top: 2px solid #12B1D1;
+    border-bottom: 2px solid #12B1D1;
+    
+  }
+  
+  .form .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .form .forgot-password a {
+    font-size: 11px;
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  .form .login-button {
+    display: block;
+    width: 20%;
+    font-weight: bold;
+    background: linear-gradient(45deg,#112b4a 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    margin-top:40px;
+    margin-left: 0px;
+  }
+  
+  .form .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  .social-account-container {
+    margin-top: 25px;
+  }
+  
+  .social-account-container .title {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+  
+  .social-account-container .social-accounts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+  }
+  
+  .social-account-container .social-accounts .social-button {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+    border: 5px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .social-account-container .social-accounts .social-button .svg {
+    fill: white;
+    margin: auto;
+  }
+  
+  .social-account-container .social-accounts .social-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .social-account-container .social-accounts .social-button:active {
+    transform: scale(0.9);
+  }
+  
+  .agreement {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .agreement a {
+    text-decoration: none;
+    color: #0099ff;
+    font-size:13px;
+   
+  }
+  .loj
+  {
+    font-size: 18px;font-family: sans-serif;color: white;
+  }
+  .rbt
+  {
+    font-size: 17px;font-family: sans-serif;color:#112b4a ;
+  }
+  .form .input1 {
+    width: 70%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    /* margin-left: ; */
+    
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+    
+  }
+  
+     </style>
+
+</head>
+<body>
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mt-1" role="alert">
+      <strong>College Management System !</strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    
+  <div class="container" >
+    
+    <div class="row">
+      
+      <div class="col-md-12 container1" >
+        
+        <center>
+          <p class="klo"><b>Admission Form</b></p>
+                    <hr style="color: #112b4a;height: 50px;margin-top: 44px;">
+                    
+                    <div class="col-md-6" >
+                    </center>
+                    <form action="admissiondata" class="form">
+
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">Student Name:-</span></div> 
+                       
+                       <div class="col-md-10"><input required="" class="input" type="text" name="nm" id="text" placeholder="Student Name"style="width: 50%;"></div> 
+                        
+                </div>  
+            </div>
+        </div>
+
+
+                    <br>
+
+
+                   <div class="row">
+                        <div class="col-md-12" >
+                            <div class="row">
+
+                                <div class="col-md-2"> <span class="rbt">Father Name:-</span></div> 
+                       
+                                    <div class="col-md-10"><input required="" class="input" type="text" name="fname" id="text" placeholder="Father Name"style="width: 50%;"></div> 
+                        
+                                 </div>  
+                             </div>
+                        </div>
+
+
+
+                   <br>
+
+                   
+                   <div class="row">
+                        <div class="col-md-12" >
+                             <div class="row">
+
+                                     <div class="col-md-2" > <span class="rbt">Mother Name:-</span></div> 
+                       
+                        <div class="col-md-10" ><input required="" class="input" type="text" name="mname" id="text" placeholder="Mother Name"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+
+                   <br>
+
+                   
+                   <div class="row">
+                    <div class="col-md-12">
+                   <div class="row">
+
+                       <div class="col-md-2"> <span class="rbt">Emali:-</span></div> 
+                       
+                       <div class="col-md-10"><input required="" class="input" type="text" name="mail" id="text" placeholder="Enter your emali"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+                   <br>
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">Contect No:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="text" name="mno" id="text" placeholder="Contect No"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+                   
+                   <br>
+
+                   {% comment %} <br> {% endcomment %}
+
+                   
+                   
+        
+                    <div style="height: 20px;"></div>
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">City:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="text" name="city" id="text" placeholder="City"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+                   <br>
+                   <div style="height: 20px;"></div>
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">State:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="text" name="state" id="text" placeholder="Stat"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+                   
+                   <br>
+                   <div style="height: 20px;"></div>
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">District:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="text" name="dist" id="text" placeholder="District"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+                   <br>
+                   <div style="height: 20px;"></div>
+
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">Date of birth:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="date" name="dob" id="text" placeholder="DD/MM/YY"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                </div>
+                <br>
+                <div style="height: 20px;"></div>
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">Aadhar No:-</span></div> 
+                       
+                       <div class="col-md-10" ><input required="" class="input" type="text" name="adhar" id="text" placeholder="Number"style="width: 50%;"></div> 
+                        
+                    </div>  
+
+                    </div>
+                   </div>
+
+
+
+                   <br>
+                   <div style="height: 20px;"></div>
+
+
+                   
+                   <div class="row">
+                    <div class="col-md-12" >
+                   <div class="row">
+
+                       <div class="col-md-2" > <span class="rbt">Education Qualificaton:-</span></div> 
+                       
+                       <div class="col-md-10" >  <select class="input" name="education">
+                        <!-- <option>Qualificaton</option> -->
+                        <option></option>
+                        <option>10pass</option>
+                        <option>12pass</option>
+                        <option>graduate</option>
+                    </select>
+                </div>
+                        
+                    </div> 
+                </div>
+            </div>
+
+
+
+
+
+            <br>
+            <div style="height: 20px;"></div>
+
+
+
+                   
+
+
+
+            <br><br>
+            <div style="height: 20px;"></div>
+
+
+                   
+            <div class="row">
+             <div class="col-md-12">
+            <div class="row">
+
+                <div class="col-md-2"> <span class="rbt">Category:-</span></div> 
+                
+                <div class="col-md-10" style="color: #112b4a;">
+
+                    
+                    <input type="radio" name="cat" value="ST">ST
+                    <br>
+                    <input type="radio" name="cat" value="SC">SC
+                    <br>
+                    <input type="radio" name="cat" value="OBC">OBC
+                    <br>
+                    <input type="radio" name="cat" value="GENERAL">GENERAL
+                    
+                    
+             </div>  
+
+             </div>
+            </div>
+            </div>
+
+
+            <br><br><br>
+            <div style="height: 20px;"></div>
+
+
+                   
+            <div class="row">
+             <div class="col-md-12">
+            <div class="row">
+
+                <div class="col-md-2"> <span class="rbt">Gender:-</span></div> 
+                
+                <div class="col-md-10" style="color: #112b4a">
+                    <input type="radio" name="gndr" value="male" style="font-size: 30px;font-family: sans-serif;color: #112b4a">Male
+                    <br>
+                    <input type="radio" name="gndr" value="female" style="font-size: 17px;font-family: sans-serif;color: #112b4a">Female
+                </div> 
+                 
+             </div>  
+
+             </div>
+            </div>
+
+
+
+
+
+            <br>
+            <div style="height: 20px;"></div>
+
+
+            <br>
+            <div style="height: 20px;"></div>
+
+
+                   
+            <div class="row">
+             <div class="col-md-12">
+            <div class="row">
+
+                <div class="col-md-2"> <span class="rbt">Coures:-</span></div> 
+                
+                <div class="col-md-10">  <select class="input" name="crse">
+                 <!-- <option>Qualificaton</option> -->
+                                    <option>B.COM</option>
+    
+                                    <option>BCA</option>
+                                    <option>MBA</option>
+                                    <option>NRIBA</option>
+                                    <option>GLSIBA</option>
+                                    <option>BPA</option>
+                                    <option>M.SC(IT)</option>
+                                    <option>PGDCA</option>
+                                    <option>LLB</option>
+                                    <option>B.TECH</option>
+                                    <option>GLSID</option>
+             </select>
+         </div>
+                 
+             </div> 
+         </div>
+     </div>
+
+
+
+     <br><br>
+
+     <input class="login-button" type="submit" value="submit" >
+                      
+
+
+
+
+
+                   </form>
+            </div>
+
+
+            </div>
+            
+        </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

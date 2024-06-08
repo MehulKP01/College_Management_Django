@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/singin.css' %}">
+
+     <!-- Latest compiled and minified CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</head>
+
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mt-1" role="alert">
+      <strong>College Management System !</strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+    <div class="container" style="background-color:white;">
+        <div class="row">
+            <center>
+
+            <div class="col-md-6" >
+
+
+                <div class="container1 ms-md-2 ms-4">
+                    <div class="heading">Sign Up</div>
+                    <form action="register" class="form" method="get">
+                        {% comment %} {% csrf_token %} {% endcomment %}
+                      <input required="" class="input" type="text" name="un" placeholder="UserName">
+                      <input required="" class="input" type="email" name="em" placeholder="Email id">
+                      <input required="" class="input" type="text" name="cn"  placeholder="Contact no">
+                      <input required="" class="input" type="password" name="pwd" placeholder="Password">
+                      <!-- <span class="forgot-password"><a href="#">Forgot Password ?</a></span> -->
+                      <input class="login-button" type="submit" value="SIGN-UP" >
+                      
+                    </form>
+                    <div class="social-account-container">
+                     
+                        <div class="social-accounts">
+                          
+                        </div>
+                      </div>
+                      <span class="agreement"><a href='login'>Have an account? Log in</a></span>
+                  </div>
+            </div>
+        </center>
+
+        </div>
+    </div>
+</body>
+</html>

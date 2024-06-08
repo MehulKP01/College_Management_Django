@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/container.css' %}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="{% static 'js/index.js' %}"></script> -->
+</head>
+
+
+<body>
+  <div class="intro">
+    <h1 class="logo-header">
+        <span class="logo">College</span> <span class="logo">Management</span> <span class="logo">System.</span>
+    </h1>
+  </div>
+
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show mt-1" role="alert">
+      <strong>College Management System !</strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+
+    <div class="container" style="background-color:white;">
+        <div class="row">
+            <div class="col-md-1 " ></div>
+                <div class="col-md-5" >
+                    <center>
+                <img src="{% static "image/logo-university.avif" %}" style="height:350px;width:350px; margin-top:120px ;
+                 ;" class=""></center>
+            
+            </div>
+            <div class="col-md-6" >
+
+                <div class="container1 ms-md-2 ms-4">
+                    <div class="heading">Log In</div>
+                    <form action="logincheck" class="form">
+                        {% comment %} {% csrf_token %} {% endcomment %}
+                      <input required="" class="input" type="text" name="lnc" placeholder="Username">
+                      <input required="" class="input" type="password" name="lpc" placeholder="Password">
+                      <span class="forgot-password"><a href="newpassword">Forgot Password ?</a></span>
+                      <input class="login-button" type="submit" value="Log In">
+                    </form>
+                    <div class="social-account-container">
+                     
+                        <div class="social-accounts">
+                          
+                        </div>
+                      </div>
+                      <span class="agreement"><a href="signin">Create new account</a></span>
+                  </div>
+                
+            
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    let intro=document.querySelector('.intro');
+let logo=document.querySelector('.logo-header');
+let logospan=document.querySelectorAll('.logo');
+
+
+window.addEventListener('DOMContentLoaded',()=>{
+    setTimeout(()=>{
+        logospan.forEach((span,idx)=>{
+            setTimeout(()=>{
+                span.classList.add('active');
+            },(idx+1)*400)
+        });
+        setTimeout(()=>{
+            logospan.forEach((span,idx)=>{
+                setTimeout(()=>{
+                    span.classList.remove('active');
+                    span.classList.add('fade');
+                },(idx+1)*50)  
+            })
+        },2000);
+        setTimeout(()=>{
+            intro.style.top='-100vh'
+        },2300)  
+    })
+})
+</script>
+    
+</body>
+</html>
